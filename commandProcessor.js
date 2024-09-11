@@ -1,3 +1,4 @@
+import {Readable} from 'stream';
 import fs from 'fs';
 import readline from 'readline';
 
@@ -65,12 +66,11 @@ export default class CommandProcessor {
       const fileStream = fs.createReadStream(argv[0]);
       this.processInput(fileStream);
     }
-    // uncomment to have hardcoded input
-    // this.processInput(Readable.from([`
-    //   CREATE a/b/c
-    //   MOVE a/b a/b/c
-    //   LIST
-    // `]))
+    // edit to have hardcoded commands:
+    this.processInput(Readable.from([`
+      CREATE a/b/c
+      DELETE a
+    `]))
     this.processInput(process.stdin, () => {
       this.#saveState();
       console.log(`State saved to ${STATE_RECONSTRUCTION_FILE} file`)
