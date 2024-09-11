@@ -1,0 +1,17 @@
+{
+  "name": "directory-tree-manager",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "mocha",
+    "test:watch": "mocha -w"
+  },
+  "author": "",
+  "type": "module",
+  "license": "ISC",
+  "dependencies": {
+    "mocha": "^10.7.3"
+  }
+}
